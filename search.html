@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: beige;
+      }
+      #img_full {
+        height: 90vh;
+        border: 5px solid white;
+      }
+      #main {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <!--No need to add sidebar here, directly display search results here only-->
+
+       <img src="" alt="" id="img_full" />
+      <p id="name"></p>
+
+    </div>
+  </body>
+</html>
+<script>
+  let source = JSON.parse(localStorage.getItem("img_data"));
+  let image = document.getElementById("img_full");
+  let p = document.getElementById("name");
+  p.textContent = source.user.name;
+  image.src = source.urls.full;
+</script>
